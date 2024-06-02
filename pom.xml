@@ -67,6 +67,14 @@
             <version>${alfresco.sdk.version}</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.32</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
     <dependencyManagement>
         <dependencies><!-- This will import the dependencyManagement for all artifacts in the selected Alfresco platform. NOTE: You still need to define dependencies in your POM, but you can omit version as it's enforced by this dependencyManagement. NOTE: It defaults to the latest version this SDK pom has been tested with, but alfresco version can/should be overridden in your project's pom -->
@@ -377,6 +385,24 @@
             <id>alfresco-internal</id>
             <url>https://artifacts.alfresco.com/nexus/content/groups/internal</url>
         </repository>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-releases</id>
+            <url>https://repo.spring.io/release</url>
+        </repository>
+        <repository>
+            <id>spring-snapshots</id>
+            <url>https://repo.spring.io/snapshot</url>
+        </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
@@ -392,11 +418,13 @@
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
+
     <modules>
         <module>alf-test-platform</module>
         <module>alf-test-share</module>
         <module>alf-test-integration-tests</module>
         <module>alf-test-platform-docker</module>
         <module>alf-test-share-docker</module>
+<!--        <module>proto</module>-->
     </modules>
 </project>

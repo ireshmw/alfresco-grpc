@@ -1,0 +1,16 @@
+//syntax = "proto3";
+//
+//option java_package = "com.imw.alfresco.grpc";
+//option java_outer_classname = "AlfrescoProto";
+//
+//service AlfrescoService {
+//  rpc GetDocument (DocumentRequest) returns (DocumentResponse);
+//}
+//
+//message DocumentRequest {
+//  string documentId = 1;
+//}
+//
+//message DocumentResponse {
+//  string content = 1;
+//}

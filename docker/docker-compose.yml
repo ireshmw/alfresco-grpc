@@ -1,4 +1,4 @@
-version: '3.4'
+version: '4.5'
 services:
   alf-test-share:
     image: alfresco-share-alf-test:development
@@ -28,6 +28,7 @@ services:
     ports:
       - "${acs.port}:8080"
       - "${acs.debug.port}:8888"
+      - "50051:50051"
     volumes:
       - alf-test-acs-volume:/usr/local/tomcat/alf_data
     depends_on:

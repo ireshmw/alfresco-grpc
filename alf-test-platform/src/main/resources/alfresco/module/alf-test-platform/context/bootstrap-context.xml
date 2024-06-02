@@ -39,4 +39,8 @@
             </list>
         </property>
     </bean>
+
+    <bean id="grpcLifecycleBean" class="com.imw.platformsample.GrpcLifecycleBean">
+        <!-- Any necessary property configurations can go here -->
+    </bean>
 </beans>
