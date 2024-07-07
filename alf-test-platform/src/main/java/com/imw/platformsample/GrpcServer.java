@@ -1,18 +1,11 @@
 package com.imw.platformsample;
 
 import com.imw.proto.HelloWorldRequest;
-import com.imw.proto.HelloWorldServiceGrpc;
 import com.linecorp.armeria.common.SessionProtocol;
 import com.linecorp.armeria.common.grpc.GrpcSerializationFormats;
 import com.linecorp.armeria.server.ServerBuilder;
-import com.linecorp.armeria.server.ServerPort;
-import com.linecorp.armeria.server.docs.DocService;
-import com.linecorp.armeria.server.docs.DocServiceFilter;
-import com.linecorp.armeria.server.logging.LoggingService;
 import io.grpc.protobuf.services.ProtoReflectionService;
-import io.grpc.reflection.v1alpha.ServerReflectionGrpc;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.annotation.Bean;
 import com.linecorp.armeria.server.Server;
 import com.linecorp.armeria.server.grpc.GrpcService;
 

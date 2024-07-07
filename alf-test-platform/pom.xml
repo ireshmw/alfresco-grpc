@@ -83,96 +83,33 @@
 
             </exclusions>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.apache.logging.log4j</groupId>-->
-<!--            <artifactId>log4j-core</artifactId>-->
-<!--            <version>2.20.0</version>-->
-<!--            <scope>compile</scope>-->
-<!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>io.grpc</groupId>-->
-        <!--            <artifactId>grpc-stub</artifactId>-->
-        <!--            <version>1.60.1</version>-->
-        <!--            <scope>compile</scope>-->
-        <!--        </dependency>-->
-
-        <!--        <dependency>-->
-        <!--            <groupId>io.grpc</groupId>-->
-        <!--            <artifactId>grpc-services</artifactId>-->
-        <!--            <version>1.60.1</version>-->
-        <!--            <scope>compile</scope>-->
-        <!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.linecorp.armeria</groupId>-->
-<!--            <artifactId>armeria-spring-boot3-starter</artifactId>-->
-<!--            <version>1.29.1</version>-->
-<!--            <exclusions>-->
-<!--                <exclusion>-->
-<!--                    <groupId>org.apache.logging.log4j</groupId>-->
-<!--                    <artifactId>log4j-to-slf4j</artifactId>-->
-<!--                </exclusion>-->
-<!--            </exclusions>-->
-<!--        </dependency>-->
-
-        <dependency>
-            <groupId>com.linecorp.armeria</groupId>
-            <artifactId>armeria</artifactId>
-            <version>1.29.1</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>io.netty</groupId>
-                    <artifactId>netty-codec-http2</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>io.netty</groupId>
-                    <artifactId>netty-codec-http</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
 
         <dependency>
             <groupId>com.linecorp.armeria</groupId>
             <artifactId>armeria-grpc</artifactId>
-            <version>1.29.1</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>io.netty</groupId>
-                    <artifactId>netty-codec-http2</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>io.netty</groupId>
-                    <artifactId>netty-codec-http</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-codec-http2</artifactId>
-            <version>4.1.111.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-codec-http</artifactId>
-            <version>4.1.111.Final</version>
         </dependency>
     </dependencies>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-<!--                <version>3.2.4</version>-->
-                <version>3.3.1</version>
-                <scope>import</scope>
-                <type>pom</type>
+                <groupId>com.linecorp.armeria</groupId>
+                <artifactId>armeria-grpc</artifactId>
+                <version>1.26.0</version>
             </dependency>
-            <dependency>
-                <groupId>com.zaxxer</groupId>
-                <artifactId>HikariCP</artifactId>
-                <version>5.0.0</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-dependencies</artifactId>-->
+<!--&lt;!&ndash;                <version>3.2.4</version>&ndash;&gt;-->
+<!--                <version>3.3.1</version>-->
+<!--                <scope>import</scope>-->
+<!--                <type>pom</type>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>com.zaxxer</groupId>-->
+<!--                <artifactId>HikariCP</artifactId>-->
+<!--                <version>5.0.0</version>-->
+<!--            </dependency>-->
         </dependencies>
     </dependencyManagement>
     <build>
@@ -185,6 +122,34 @@
             <!--                <groupId>org.springframework.boot</groupId>-->
             <!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
             <!--            </plugin>-->
+
+
+
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-shade-plugin</artifactId>-->
+<!--                <version>3.4.1</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <phase>package</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>shade</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <relocations>-->
+<!--                                <relocation>-->
+<!--                                    <pattern>com.linecorp.armeria</pattern>-->
+<!--                                    <shadedPattern>my.shaded.com.linecorp.armeria</shadedPattern>-->
+<!--                                </relocation>-->
+<!--                                <relocation>-->
+<!--                                    <pattern>io.netty</pattern>-->
+<!--                                    <shadedPattern>my.shaded.io.netty</shadedPattern>-->
+<!--                                </relocation>-->
+<!--                            </relocations>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 
