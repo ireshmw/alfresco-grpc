@@ -7,8 +7,8 @@ import io.grpc.stub.StreamObserver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class GreeterServer extends HelloWorldServiceGrpc.HelloWorldServiceImplBase {
-    private static final Logger logger = LoggerFactory.getLogger(GreeterServer.class);
+public class GreeterService extends HelloWorldServiceGrpc.HelloWorldServiceImplBase {
+    private static final Logger logger = LoggerFactory.getLogger(GreeterService.class);
 
     @Override
     public void helloWorld(HelloWorldRequest request, StreamObserver<HelloWorldResponse> responseObserver) {

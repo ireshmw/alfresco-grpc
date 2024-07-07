@@ -9,7 +9,7 @@
 
     <parent>
         <groupId>com.imw</groupId>
-        <artifactId>alf-test</artifactId>
+        <artifactId>alf-grpc</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 

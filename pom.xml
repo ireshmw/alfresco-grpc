@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.imw</groupId>
-    <artifactId>alf-test</artifactId>
+    <artifactId>alf-grpc</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>AIO - SDK 4.8</name>
     <description>All-In-One (AIO) project for SDK 4.8</description>
@@ -60,6 +60,16 @@
             <groupId>${alfresco.groupId}</groupId>
             <artifactId>alfresco-remote-api</artifactId>
             <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.netty</groupId>
+                    <artifactId>netty-codec-http2</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.netty</groupId>
+                    <artifactId>netty-codec-http</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency><!-- Bring in Alfresco RAD so we get access to AlfrescoTestRunner classes -->
         <dependency>
             <groupId>org.alfresco.maven</groupId>
@@ -160,20 +170,20 @@
                     <artifactId>maven-failsafe-plugin</artifactId>
                     <version>3.0.0-M1</version>
                     <executions>
-<!--                        <execution>-->
-<!--                            <id>integration-test</id>-->
-<!--                            <phase>integration-test</phase>-->
-<!--                            <goals>-->
-<!--                                <goal>integration-test</goal>-->
-<!--                            </goals>-->
-<!--                        </execution>-->
-<!--                        <execution>-->
-<!--                            <id>verify-test</id>-->
-<!--                            <phase>verify</phase>-->
-<!--                            <goals>-->
-<!--                                <goal>verify</goal>-->
-<!--                            </goals>-->
-<!--                        </execution>-->
+                        <!--                        <execution>-->
+                        <!--                            <id>integration-test</id>-->
+                        <!--                            <phase>integration-test</phase>-->
+                        <!--                            <goals>-->
+                        <!--                                <goal>integration-test</goal>-->
+                        <!--                            </goals>-->
+                        <!--                        </execution>-->
+                        <!--                        <execution>-->
+                        <!--                            <id>verify-test</id>-->
+                        <!--                            <phase>verify</phase>-->
+                        <!--                            <goals>-->
+                        <!--                                <goal>verify</goal>-->
+                        <!--                            </goals>-->
+                        <!--                        </execution>-->
                     </executions>
                     <dependencies>
                         <dependency>
@@ -425,6 +435,6 @@
         <module>alf-test-integration-tests</module>
         <module>alf-test-platform-docker</module>
         <module>alf-test-share-docker</module>
-<!--        <module>proto</module>-->
+        <!--        <module>proto</module>-->
     </modules>
 </project>

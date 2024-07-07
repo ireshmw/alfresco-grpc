@@ -29,6 +29,7 @@ services:
       - "${acs.port}:8080"
       - "${acs.debug.port}:8888"
       - "50051:50051"
+      - "8089:8089"
     volumes:
       - alf-test-acs-volume:/usr/local/tomcat/alf_data
     depends_on:
